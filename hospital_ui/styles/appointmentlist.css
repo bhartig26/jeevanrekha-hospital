@@ -1,0 +1,177 @@
+/* ================= HEADER ================= */
+.appointment-list-bar,
+.create-appointment-bar {
+  background: linear-gradient(90deg, #063b2c, #0b5f46);
+  padding: 14px 18px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* ================= FILTER CARD ================= */
+.appointment-filter {
+  background: #f2faf6;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.appointment-filter label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.search-row {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0 20px;
+}
+
+.search-row input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+}
+
+.search-btn {
+  background: #0f8a5f;
+  border: none;
+  color: white;
+  padding: 0 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ================= FILTER DROPDOWNS ================= */
+.filter-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.filter-row select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+}
+
+/* ====================================================
+   APPOINTMENT LIST TABLE (MATCHES IMAGE EXACTLY)
+   ==================================================== */
+
+/* OUTER TABLE CONTAINER */
+.appointment-table-wrapper {
+  background: #f2faf6;
+  border-radius: 14px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* YELLOW LEFT BORDER (WHOLE SECTION, NOT ROWS) */
+.appointment-table-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 58px; /* starts below header row */
+  width: 4px;
+  height: calc(100% - 58px);
+  background-color: #f5a623;
+}
+
+/* TABLE BASE */
+.appointment-table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* HEADER ROW */
+.appointment-table-wrapper thead tr {
+  background: #063b2c;
+}
+
+.appointment-table-wrapper thead th {
+  padding: 14px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: left;
+}
+
+/* BODY ROW (FLAT – NO CARD) */
+.appointment-table-wrapper tbody tr {
+  background: #eef7f2; /* light green like image */
+}
+
+/* TABLE CELLS */
+.appointment-table-wrapper td {
+  padding: 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1f2937;
+  vertical-align: middle;
+}
+
+/* CITY UNDER NAME */
+.appointment-table-wrapper td small {
+  display: block;
+  font-size: 11px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* ACTION ICONS */
+.appointment-table-wrapper .actions {
+  white-space: nowrap;
+}
+
+.appointment-table-wrapper .actions i {
+  font-size: 16px;
+  color: #0f8a5f;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.appointment-table-wrapper .actions i:hover {
+  color: #063b2c;
+}
+
+/* ================= FOOTER ================= */
+.table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  font-size: 12px;
+  color: #374151;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+}
+
+.pagination {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .filter-row {
+    grid-template-columns: 1fr;
+  }
+
+  .search-row {
+    flex-direction: column;
+  }
+
+  .appointment-table-wrapper table {
+    display: block;
+    overflow-x: auto;
+  }
+}

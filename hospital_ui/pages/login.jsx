@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import "../styles/Login.css";
-import logo from "../src/assets/logo.svg";
+import logo from "../src/assets/logo.svg" // ✅ FIXED
 import { FaUser, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="login-container">
@@ -14,7 +16,6 @@ const Login = () => {
         <h2>Welcome Back</h2>
         <p className="subtitle">Login to your account</p>
 
-        {/* Username */}
         <div className="form-group">
           <label>Username</label>
           <div className="input-wrapper">
@@ -23,27 +24,26 @@ const Login = () => {
           </div>
         </div>
 
-        {/* Password */}
         <div className="form-group">
           <label>Password</label>
           <div className="input-wrapper">
             <FaLock className="input-icon" />
-
             <input
               type={showPassword ? "text" : "password"}
               placeholder="Enter your password"
             />
-
-            <span
-              className="eye-icon"
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              {showPassword ? <FaEyeSlash /> : <FaEye />}
-            </span>
+              <span
+      className={`eye-icon ${showPassword ? "active" : ""}`}
+      onClick={() => setShowPassword(!showPassword)}
+    >
+      <FaEye />
+    </span>
           </div>
         </div>
 
-        <button className="login-btn">Login</button>
+        <button className="login-btn" onClick={() => navigate("/dashboard")}>
+          Login
+        </button>
 
         <p className="help-text">
           Having trouble logging in? Please contact the

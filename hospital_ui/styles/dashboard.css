@@ -1,0 +1,143 @@
+/* ================= CREATE APPOINTMENT BAR ================= */
+body {
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+  color: #1f2937;
+}
+.create-appointment-bar {
+  background: linear-gradient(90deg, #063b2c, #0b5f46);
+  border-radius: 10px;
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.create-appointment-bar h5 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* BUTTONS */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.green-btn {
+  background: #0f8a5f;
+  border: none;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.green-btn i {
+  font-size: 14px;
+}
+
+.green-btn:hover {
+  background: #0b6d4b;
+}
+
+/* ================= APPOINTMENT FORM ================= */
+.appointment-container {
+  background: #f2faf6;
+  border-radius: 14px;
+  padding: 22px;
+}
+
+/* ===== SECTION HEADER WITH YELLOW BAR ===== */
+.section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+/* YELLOW VERTICAL LINE */
+.yellow-bar {
+  width: 4px;
+  height: 44px;               /* matches reference UI */
+  background-color: #f5a623;
+  border-radius: 2px;
+}
+
+/* SECTION TEXT */
+.section-text h6 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.section-text span {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* GRID */
+.appointment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 24px;
+}
+
+/* FORM ELEMENTS */
+.appointment-grid label {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+  color: #1f2937;
+}
+
+.appointment-grid input,
+.appointment-grid select,
+.appointment-grid textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+}
+
+.appointment-grid textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+/* FULL WIDTH FIELD */
+.full-width {
+  grid-column: span 2;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .create-appointment-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .appointment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: span 1;
+  }
+
+  .yellow-bar {
+    height: 36px;
+  }
+}
