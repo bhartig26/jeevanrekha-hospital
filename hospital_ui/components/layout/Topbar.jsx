@@ -7,10 +7,19 @@ const Topbar = ({ toggle }) => {
       {/* LEFT SIDE */}
       <div className="topbar-left">
         {/* HAMBURGER */}
-        <i
+        {/* <i
           className="bi bi-list hamburger"
           onClick={toggle}
-        ></i>
+        ></i> */}
+        <i
+  className="bi bi-list hamburger"
+  onClick={() => {
+    if (window.innerWidth <= 768) {
+      toggle();   // ✅ mobile only
+    }
+  }}
+></i>
+
 
         {/* SEARCH */}
         <input
